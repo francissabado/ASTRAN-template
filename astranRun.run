@@ -25,7 +25,7 @@ set lpsolve "/opt/gurobi652/linux64/bin/gurobi_cl"
 * Change these settings
 set log "<LOGFILE>"
 load technology "<RULESFILE>"
-load netlist "<NETLIST>"
+load netlist "<NETLISTFILE>"
 * load layouts "/home/fsabado/AstranDoc/AstranProject/Chartered130.lay"
 
 cellgen select <CELLNAME>
@@ -35,6 +35,4 @@ export layout AND2 "<PROJECTDIR>/<CELLNAME>.c2c"
 export layout AND2 "<PROJECTDIR>/<CELLNAME>.gds"
 
 save layouts "<PROJECTDIR>/<CELLNAME>.lay"
-export cellsizes "<PROJECTIDR>/<CELLNAME>.est"
-
-
+export cellsizes "<PROJECTDIR>/<CELLNAME>.est"
