@@ -1,0 +1,117 @@
+* ASTRAN - IC Physical Design Tool v3.20 - Thu Jul 28 14:48:59 2016
+* --------------------------------------------------------
+* UFRGS - Universidade Federal do Rio Grande do Sul
+* GME - Microelectronics Group
+* WEBPAGE - http://aziesemer.github.io/astran/
+
+* Original Author
+*  - Adriel Ziesemer <amziesemerj[at]inf.ufrgs.br>
+* Project Advisor
+*  - Ricardo Reis <reis[at]inf.ufrgs.br>
+* Contributors:
+*  - Leandro Heck, Gustavo Smaniotto, Charles Capella Leonhardt, Felipe Avila Nesello, Cristiano Lazzari, Glauco Santos, Guilherme Flach, Gracieli Posser, Renato Hentschke
+
+TECHNAME		Chartered130nm
+MLAYERS		6
+SOI		NO
+MINSTEP		0.005
+
+S1P1P1		0.18	* Minimum POLY1 spacing
+S2P1P1		0.18	* Minimum GATE to GATE spacing
+S2P1P1_1		99	* Gate length for rule S2P1P1.2
+S2P1P1_2		0.18	* GATE to GATE spacing if L>S2P1P1.1
+S3P1P1		0.18	* Minimum POLY1 spacing in a dense line end
+S1DFP1		0.07	* Minimum POLY1 spacing to DIFF
+S2DFP1		0.07	* Minimum POLY1 spacing to DIFF if W<S3DFP1
+E1P1DF		0.16	* Minimum POLY1 extension of GATE
+E2P1DF		0.16	* Minimum POLY1 extension of GATE in L shape diff
+E1DFP1		0.23	* Minimum DIFF extension of GATE
+W2CT		0.16	* Fixed CONT size
+E2M1CT		0.05	* Minimum MET1 extension on CONT on at least 2 opposite sides
+E3M1CT		0.05	* Minimum MET1 enclosure of CONT on all sides if E2M1CT is not fulfilled
+E1DFCT		0.07	* Minimum DIFF enclosure of CONT
+E2DFCT		0.07	* Minimum DIFF enclosure of CONT (min. 2 oposite sides)
+E1P1CT		0.07	* Minimum POLY1 enclosure of CONT
+E2P1CT		0.07	* Minimum POLY1 extension on CONT on all sides at least 2 opposite sides
+E3P1CT		0.07	* Minimum POLY1 enclosure of CONT if E2P1CT is not fulfilled
+S1CTP1		0.11	* Minimum DIFFCON spacing of GATE
+S1CTDF		0.14	* Minimum POLY1CON spacing of DIFF
+W2VI		0.19	* Fixed VIA size
+E1M1VI		0.01	* Minimum MET1 enclosure of VIA
+E2M1VI		0.01	* Minimum MET1 enclosure of VIA on at least 2 opposite sides
+E1M2VI		0.01	* Minimum MET2 enclosure of VIA
+S1M2M2		0.21	* Minimum MET2 spacing to MET2
+W2P1		0.13	* Minimum GATE length
+W2DF		0.15	* Minimum DIFF width
+W2V2		0.19	* Fixed VIA2 size
+S1M1M1		0.18	* Minimum MET1 spacing to MET1
+S2M1M1		0.6	* Minimum Wide MET1 spacing to MET1
+S3M1M1		0.18	* Minimum MET1 spacing in a dense line end
+E1M2V2		0.005	* Minimum MET2 enclose of VIA2
+S1CTCT		0.18	* Minumum aligned CONT spacing
+S2CTCT		0.18	* Minumum shorted CONT spacing
+S3CTCT		0.18	* Minumum misaligned CONT spacing
+E1INDF		0.08	* Minimum NPLUS extension of DIFF
+E1IPDF		0.08	* Minimum PPLUS extension of DIFF
+E1WNDP		0.3	* Minimum NTUB enclosure of PDIFF
+S1DNWN		0.3	* Minimum NDIFF spacing to NTUB
+S2M2M2		0.6	* Minimum MET2 spacing to WIDE_MET2
+A1M1		0.12	* Minimum MET1 area
+W1M1		0.16	* Minimum MET1 width
+W1M2		0.2	* Minimum MET2 width
+W1M3		0.2	* Minimum MET3 width
+W1M4		0.2	* Minimum MET4 width
+W1M5		0.2	* Minimum MET5 width
+W1M6		0.2	* Minimum MET6 width
+W1M7		0.2	* Minimum MET7 width
+W1M8		0.2	* Minimum MET8 width
+W1M9		0.2	* Minimum MET9 width
+W1M10		0.2	* Minimum MET10 width
+A1DF		0.122	* Minimum DIFF area
+S1DFDF		0.21	* Minimum DIFF spacing to DIFF
+S2DFDF		0.21	* Minimum U shape DIFF spacing
+S1VIVI		0.22	* Minimum VIA spacing to VIA
+S1V2V2		0.22	* Minimum VIA2 spacing to VIA2
+S1M3M3		0.21	* Minimum MET3 spacing to MET3
+E1M3V2		0.005	* Minimum MET3 enclosure of VIA2
+E1M3V3		0.005	* Minimum MET3 enclosure of VIA3
+W2V3		0.19	* Fixed VIA3 size
+E1M4V3		0.005	* Minimum MET4 enclosure of VIA3
+S1M4M4		0.21	* Minimum MET4 spacing to MET4
+W2V4		0.19	* Fixed VIA4 size
+E1M4V4		0.005	* Minimum MET4 enclosure of VIA4
+E1M5V4		0.005	* Minimum MET5 enclosure of VIA4
+S1M5M5		0.21	* Minimum MET5 spacing to MET5
+W2V5		0.19	* Fixed VIA5 size
+S1IPIP		0.31	* PPLUS spacing to PPLUS
+S1ININ		0.31	* NPLUS spacing to NPLUS
+W2V6		0.36	* Fixed VIA6 size
+W2V7		0.36	* Fixed VIA7 size
+W2V8		0.36	* Fixed VIA8 size
+W2V9		0.36	* Fixed VIA9 size
+W2V10		0.36	* Fixed VIA10 size
+
+
+* Layers' names for files
+* layer		CIF	GDSII	Tech
+CONT		CCG	33	CO
+POLY		CPG	30	PO
+NDIF		CAN	22	OD
+PDIF		CAP	22	OD
+NSEL		CSN	31	NP
+PSEL		CSP	32	PP
+NWEL		CWN	21	NW
+PWEL		CWP	12	PTUB
+VIA1		CVA	35	VIA1
+VIA2		CVS	38	VIA2
+VIA3		CVT	40	VIA3
+VIA4		CVQ	41	VIA4
+MET1		CMF	34	M1
+MET2		CMS	36	M2
+MET3		CMT	42	M3
+MET4		CMQ	46	M4
+MET5		CMP	81	M5
+CELLBOX		CBX	0	prBoundary
+MET1P		CPF	34	Metal1_Label
+MET2P		CPS	36	Metal2_Label
+MET3P		CPT	42	Metal3_Label

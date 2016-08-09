@@ -1,0 +1,40 @@
+* Note DO NOT SAVE PROJECT
+* It will rewrite this file
+new design astran_project
+set hgrid 0.46
+set vgrid 0.41
+set vddnet VDD
+set gndnet GND
+set rowheight 9
+set supplysize 0.5
+set nWellPos 1.625
+set nWellBorder 0.31
+set pnSelBorder 0.11
+set hgrid_offset YES
+set vgrid_offset YES
+set verbose_mode 1
+* set celltemplate "Taps close to the boundary"
+set celltemplate "Taps w/ continuous diff"
+* set celltemplate "Tapless"
+set technology resolution 200
+set viewer "/home/fsabado/Astran/astran/wxSightGL/build/bin/wxsightgl"
+set rotdl "../Tools_Linux/rotdl"
+set placer "../Tools_Linux/mobralplace"
+set lpsolve "/opt/gurobi652/linux64/bin/gurobi_cl"
+
+* Change these settings
+set log "<LOGFILE>"
+load technology "<RULESFILE>"
+load netlist "<NETLIST>"
+* load layouts "/home/fsabado/AstranDoc/AstranProject/Chartered130.lay"
+
+cellgen select <CELLNAME>
+cellgen autoflow
+
+export layout AND2 "<PROJECTDIR>/<CELLNAME>.c2c"
+export layout AND2 "<PROJECTDIR>/<CELLNAME>.gds"
+
+save layouts "<PROJECTDIR>/<CELLNAME>.lay"
+export cellsizes "<PROJECTIDR>/<CELLNAME>.est"
+
+
