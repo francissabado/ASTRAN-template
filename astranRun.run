@@ -18,8 +18,8 @@ set celltemplate "Taps w/ continuous diff"
 * set celltemplate "Tapless"
 set technology resolution 200
 set viewer "/home/fsabado/Astran/astran/wxSightGL/build/bin/wxsightgl"
-set rotdl "../Tools_Linux/rotdl"
-set placer "../Tools_Linux/mobralplace"
+set rotdl "/home/fsabado/Astran/astran/Astran/build/Tools_Linux/rotdl"
+set placer "/home/fsabado/Astran/astran/Astran/build/Tools_Linux/mobralplace"
 set lpsolve "/opt/gurobi652/linux64/bin/gurobi_cl"
 
 * Change these settings
@@ -31,8 +31,8 @@ load netlist "<NETLISTFILE>"
 cellgen select <CELLNAME>
 cellgen autoflow
 
-export layout AND2 "<PROJECTDIR>/<CELLNAME>.c2c"
-export layout AND2 "<PROJECTDIR>/<CELLNAME>.gds"
+export layout <CELLNAME> "<PROJECTDIR>/Layouts/<CELLNAME>.c2c"
+export layout <CELLNAME> "<PROJECTDIR>/Layouts/<CELLNAME>.gds"
 
-save layouts "<PROJECTDIR>/<CELLNAME>.lay"
-export cellsizes "<PROJECTDIR>/<CELLNAME>.est"
+save layouts "<PROJECTDIR>/Layouts/<CELLNAME>.lay"
+export cellsizes "<PROJECTDIR>/Layouts/<CELLNAME>.est"
