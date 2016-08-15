@@ -23,6 +23,7 @@ S2P1P1_2		0.18	* GATE to GATE spacing if L>S2P1P1.1
 S3P1P1		0.18	* Minimum POLY1 spacing in a dense line end
 S1DFP1		0.07	* Minimum POLY1 spacing to DIFF
 S2DFP1		0.07	* Minimum POLY1 spacing to DIFF if W<S3DFP1
+S3DFP1      0
 E1P1DF		0.16	* Minimum POLY1 extension of GATE
 E2P1DF		0.16	* Minimum POLY1 extension of GATE in L shape diff
 E1DFP1		0.23	* Minimum DIFF extension of GATE
@@ -45,7 +46,7 @@ W2P1		0.13	* Minimum GATE length
 W2DF		0.15	* Minimum DIFF width
 W2V2		0.19	* Fixed VIA2 size
 S1M1M1		0.18	* Minimum MET1 spacing to MET1
-S2M1M1		0.6	* Minimum Wide MET1 spacing to MET1
+S2M1M1		0.22	* Minimum Wide MET1 spacing to MET1
 S3M1M1		0.18	* Minimum MET1 spacing in a dense line end
 E1M2V2		0.005	* Minimum MET2 enclose of VIA2
 S1CTCT		0.18	* Minumum aligned CONT spacing
@@ -53,8 +54,8 @@ S2CTCT		0.18	* Minumum shorted CONT spacing
 S3CTCT		0.18	* Minumum misaligned CONT spacing
 E1INDF		0.08	* Minimum NPLUS extension of DIFF
 E1IPDF		0.08	* Minimum PPLUS extension of DIFF
-E1WNDP		0.3	* Minimum NTUB enclosure of PDIFF
-S1DNWN		0.3	* Minimum NDIFF spacing to NTUB
+E1WNDP		0.31	* Minimum NTUB enclosure of PDIFF
+S1DNWN		0.31	* Minimum NDIFF spacing to NTUB
 S2M2M2		0.6	* Minimum MET2 spacing to WIDE_MET2
 A1M1		0.12	* Minimum MET1 area
 W1M1		0.16	* Minimum MET1 width
@@ -94,13 +95,13 @@ W2V10		0.36	* Fixed VIA10 size
 
 * Layers' names for files
 * layer		CIF	GDSII	Tech
-CONT		CCG	33	CO
-POLY		CPG	30	PO
-NDIF		CAN	22	OD
-PDIF		CAP	22	OD
-NSEL		CSN	31	NP
-PSEL		CSP	32	PP
-NWEL		CWN	21	NW
+CONT		CCG	33	CNT
+POLY		CPG	30	POLY2
+NDIF		CAN	22	COMP
+PDIF		CAN	22	COMP
+NSEL		CSN	32	NPLUS
+PSEL		CSP	31	PPLUS
+NWEL		CWN	21	NWELL
 PWEL		CWP	12	PTUB
 VIA1		CVA	35	VIA1
 VIA2		CVS	38	VIA2
@@ -112,6 +113,7 @@ MET3		CMT	42	M3
 MET4		CMQ	46	M4
 MET5		CMP	81	M5
 CELLBOX		CBX	0	prBoundary
-MET1P		CPF	34	Metal1_Label
-MET2P		CPS	36	Metal2_Label
-MET3P		CPT	42	Metal3_Label
+MET1P		CPF	34	MET1
+MET2P		CPS	36	MET2
+MET3P		CPT	42	MET3
+LVT		   CPT	87	LVT

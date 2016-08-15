@@ -21,26 +21,69 @@ while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symli
 done
 DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 
-CELLNAME="$(echo $1)"
+CELLNAME="$(echo $1 | tr a-z A-Z)"
 PROJECTDIR="$(echo $DIR)/${1}"
-LOGFILE="${PROJECTDIR}/history.log"
-RULESFILE="${PROJECTDIR}/Chartered130.rul"
-NETLISTFILE="${PROJECTDIR}/$(echo $CELLNAME | tr A-Z a-z )_ASTRAN.sp"
+LOGFILE="./history.log"
+RULESFILE="./Chartered130.rul"
+NETLISTFILE="./$(echo $CELLNAME | tr a-z A-Z)_ASTRAN.sp"
 
 
 #Copies requirements
 cp "$DIR/Chartered130.rul" "${PROJECTDIR}/"
+cp "$DIR/gurobi.env" "${PROJECTDIR}/"
 mkdir -p "${PROJECTDIR}/Layouts"
 
 
-# Change the template
+# Change the Full template
 sed "
 s#<LOGFILE>#$(echo $LOGFILE)#g
 s#<RULESFILE>#$(echo $RULESFILE)#g
 s#<PROJECTDIR>#$(echo $PROJECTDIR)#g
 s#<CELLNAME>#$(echo $CELLNAME)#g
 s#<NETLISTFILE>#$(echo $NETLISTFILE)#g
-" "${DIR}/astranRun.run" > "$PROJECTDIR/astranRun_${CELLNAME}.run"
+" "${DIR}/astranRun.run" > "$PROJECTDIR/astranRun.run"
 
+# Change the Save template
+sed "
+s#<LOGFILE>#$(echo $LOGFILE)#g
+s#<RULESFILE>#$(echo $RULESFILE)#g
+s#<PROJECTDIR>#$(echo $PROJECTDIR)#g
+s#<CELLNAME>#$(echo $CELLNAME)#g
+s#<NETLISTFILE>#$(echo $NETLISTFILE)#g
+" "${DIR}/astranSave.run" > "$PROJECTDIR/astranSave.run"
 
-# mkdir -p "${DIR}/Netlist"
+# Change the Autoflow template
+sed "
+s#<LOGFILE>#$(echo $LOGFILE)#g
+s#<RULESFILE>#$(echo $RULESFILE)#g
+s#<PROJECTDIR>#$(echo $PROJECTDIR)#g
+s#<CELLNAME>#$(echo $CELLNAME)#g
+s#<NETLISTFILE>#$(echo $NETLISTFILE)#g
+" "${DIR}/astranAutoflow.run" > "$PROJECTDIR/astranAutoflow.run"
+
+# Change the Autoflow template
+sed "
+s#<LOGFILE>#$(echo $LOGFILE)#g
+s#<RULESFILE>#$(echo $RULESFILE)#g
+s#<PROJECTDIR>#$(echo $PROJECTDIR)#g
+s#<CELLNAME>#$(echo $CELLNAME)#g
+s#<NETLISTFILE>#$(echo $NETLISTFILE)#g
+" "${DIR}/astranAutoflow.run" > "$PROJECTDIR/astranAutoflowAll.run"
+
+# Change the Cellgen template
+sed "
+s#<LOGFILE>#$(echo $LOGFILE)#g
+s#<RULESFILE>#$(echo $RULESFILE)#g
+s#<PROJECTDIR>#$(echo $PROJECTDIR)#g
+s#<CELLNAME>#$(echo $CELLNAME)#g
+s#<NETLISTFILE>#$(echo $NETLISTFILE)#g
+" "${DIR}/astranCellgen.run" > "$PROJECTDIR/astranCellgen.run"
+
+# Change the Load template
+sed "
+s#<LOGFILE>#$(echo $LOGFILE)#g
+s#<RULESFILE>#$(echo $RULESFILE)#g
+s#<PROJECTDIR>#$(echo $PROJECTDIR)#g
+s#<CELLNAME>#$(echo $CELLNAME)#g
+s#<NETLISTFILE>#$(echo $NETLISTFILE)#g
+" "${DIR}/astranLoad.run" > "$PROJECTDIR/astranLoad.run"
