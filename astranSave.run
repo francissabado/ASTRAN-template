@@ -1,4 +1,4 @@
 export layouts "./Layouts"
 
-save layouts "./Layouts/<CELLNAME>.lay"
-export cellsizes "./Layouts/<CELLNAME>.est"
+save layouts "./Layouts/layouts.lay"
+export cellsizes "./Layouts/cellsizes.est"

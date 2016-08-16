@@ -1,7 +1,3 @@
 read "astranLoad.run"
 read "astranAutoflowAll.run"
-
-export layouts "./Layouts"
-
-save layouts "./Layouts/<CELLNAME>.lay"
-export cellsizes "./Layouts/<CELLNAME>.est"
+read "astranSave.run"
