@@ -1,5 +1,6 @@
 read "astranLoad.run"
-read "astranAutoflowAll.run"
+* read "astranAutoflowAll.run"
+cellgen autoflow all
 
 export layouts "./Layouts"
 
