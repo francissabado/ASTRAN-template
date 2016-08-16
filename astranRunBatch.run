@@ -1,0 +1,10 @@
+read "astranLoad.run"
+* read "astranAutoflowAll.run"
+cellgen autoflow all
+
+export layouts "./Layouts"
+
+save layouts "./Layouts/<CELLNAME>.lay"
+export cellsizes "./Layouts/<CELLNAME>.est"
+
+exit
