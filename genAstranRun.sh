@@ -29,9 +29,9 @@ NETLISTFILE="./$(echo $CELLNAME | tr a-z A-Z)_ASTRAN.sp"
 
 
 #Copies requirements
-cp "$DIR/Chartered130.rul" "${PROJECTDIR}/"
-cp "$DIR/gurobi.env" "${PROJECTDIR}/"
-cp "$DIR/runBatch.sh" "${PROJECTDIR}/"
+cp -f "$DIR/Chartered130.rul" "${PROJECTDIR}/"
+cp -f "$DIR/gurobi.env" "${PROJECTDIR}/"
+cp -f "$DIR/runBatch.sh" "${PROJECTDIR}/"
 mkdir -p "${PROJECTDIR}/Layouts"
 
 
@@ -71,14 +71,14 @@ s#<CELLNAME>#$(echo $CELLNAME)#g
 s#<NETLISTFILE>#$(echo $NETLISTFILE)#g
 " "${DIR}/astranAutoflow.run" > "$PROJECTDIR/astranAutoflow.run"
 
-# Change the Autoflow template
+# Change the Autoflow All template
 sed "
 s#<LOGFILE>#$(echo $LOGFILE)#g
 s#<RULESFILE>#$(echo $RULESFILE)#g
 s#<PROJECTDIR>#$(echo $PROJECTDIR)#g
 s#<CELLNAME>#$(echo $CELLNAME)#g
 s#<NETLISTFILE>#$(echo $NETLISTFILE)#g
-" "${DIR}/astranAutoflow.run" > "$PROJECTDIR/astranAutoflowAll.run"
+" "${DIR}/astranAutoflowAll.run" > "$PROJECTDIR/astranAutoflowAll.run"
 
 # Change the Cellgen template
 sed "
