@@ -32,6 +32,7 @@ NETLISTFILE="./$(echo $CELLNAME | tr a-z A-Z)_ASTRAN.sp"
 cp -f "$DIR/Chartered130.rul" "${PROJECTDIR}/"
 cp -f "$DIR/gurobi.env" "${PROJECTDIR}/"
 cp -f "$DIR/runBatch.sh" "${PROJECTDIR}/"
+cp -f "$DIR/runBatchAll.sh" "${PROJECTDIR}/"
 mkdir -p "${PROJECTDIR}/Layouts"
 
 
@@ -52,6 +53,16 @@ s#<PROJECTDIR>#$(echo $PROJECTDIR)#g
 s#<CELLNAME>#$(echo $CELLNAME)#g
 s#<NETLISTFILE>#$(echo $NETLISTFILE)#g
 " "${DIR}/astranRunBatch.run" > "$PROJECTDIR/astranRunBatch.run"
+
+# Change the Full template (Batch - contains exit)
+#autoflowAll
+sed "
+s#<LOGFILE>#$(echo $LOGFILE)#g
+s#<RULESFILE>#$(echo $RULESFILE)#g
+s#<PROJECTDIR>#$(echo $PROJECTDIR)#g
+s#<CELLNAME>#$(echo $CELLNAME)#g
+s#<NETLISTFILE>#$(echo $NETLISTFILE)#g
+" "${DIR}/astranRunBatchAll.run" > "$PROJECTDIR/astranRunBatchAll.run"
 
 # Change the Save template
 sed "

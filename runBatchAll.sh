@@ -5,8 +5,10 @@
 # This must be set before running
 export LD_LIBRARY_PATH=/mscad/apps/Linux/cadence/MMSIM101/tools/lib:/opt/gurobi652/linux64/lib:/mscad/apps/Linux/cadence/MMSIM101/tools/lib:$LD_LIBRARY_PATH
 
-Astran --shell ./astranRunBatch.run > ./outputs.log 2>&1
+Astran --shell ./astranRunBatchAll.run > ./outputs.log 2>&1
 
 echo "Done with $PWD"
 echo "Check $PWD/outputs.log"
+
 cat ./autoflow.log
+
