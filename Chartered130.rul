@@ -54,6 +54,8 @@ S2CTCT		0.18	* Minumum shorted CONT spacing
 S3CTCT		0.18	* Minumum misaligned CONT spacing
 E1INDF		0.08	* Minimum NPLUS extension of DIFF
 E1IPDF		0.08	* Minimum PPLUS extension of DIFF
+E1INGA		0.3	* Minimum NPLUS extension of GATE
+E1IPGA		0.3	* Minimum PPLUS extension of GATE
 E1WNDP		0.31	* Minimum NTUB enclosure of PDIFF
 S1DNWN		0.31	* Minimum NDIFF spacing to NTUB
 S2M2M2		0.6	* Minimum MET2 spacing to WIDE_MET2
